@@ -7,10 +7,24 @@
     tools:context=".Domicile">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/domicileText"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="This is Domicile" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="30dp"
+        android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/domicileText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="This is Domicile" />
+
+        <Button
+            android:id="@+id/showModalButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Modal"/>
+
+    </LinearLayout>
 </FrameLayout>

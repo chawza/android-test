@@ -1,13 +1,15 @@
 package com.example.navtgest
 
+import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import androidx.navigation.NavHost
 import com.example.navtgest.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
-   private var binding: ActivityMainBinding? = null
+    private var binding: ActivityMainBinding? = null
+    lateinit var dialog: Dialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +29,14 @@ class MainActivity : AppCompatActivity() {
             }
 
             navHost.navController.navigate(actionId)
+        }
+
+        dialog = Dialog(this)
+        dialog.setContentView(R.layout.ok_dialog)
+
+        val okButton = dialog.findViewById(R.id.confirmButton) as Button
+        okButton.setOnClickListener {
+            dialog.dismiss()
         }
     }
 

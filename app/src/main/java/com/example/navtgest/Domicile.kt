@@ -35,6 +35,11 @@ class Domicile : Fragment() {
             findNavController().navigate(R.id.action_domicile_to_profile)
         }
 
+        binding.showModalButton.setOnClickListener {
+            val activity = activity as MainActivity
+            activity.dialog.show()
+        }
+
         return binding.root
     }
 
