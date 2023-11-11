@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/register_navigation"
+    app:startDestination="@id/profile">
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.example.navtgest.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_idcard"
+            app:destination="@id/idcard"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/idcard"
+        android:name="com.example.navtgest.IDCard"
+        android:label="fragment_idcard"
+        tools:layout="@layout/fragment_idcard" >
+        <action
+            android:id="@+id/action_idcard_to_domicile"
+            app:destination="@id/domicile"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/domicile"
+        android:name="com.example.navtgest.Domicile"
+        android:label="fragment_domicile"
+        tools:layout="@layout/fragment_domicile" >
+        <action
+            android:id="@+id/action_domicile_to_profile"
+            app:destination="@id/profile" />
+    </fragment>
+</navigation>
